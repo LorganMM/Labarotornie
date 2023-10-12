@@ -1,0 +1,5 @@
+i = int(input())
+i1 = int(i / 100)
+i2 = int((float(i / 100) - i1) * 10)
+i3 = int((float(i/10)- int(i/10))*10)
+print(i2)
