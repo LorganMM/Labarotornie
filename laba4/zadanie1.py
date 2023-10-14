@@ -1,33 +1,32 @@
-from random import randrange as rr
+from random import randrange
 
-n = rr(4, 31)
+n = randrange(4, 31)
 while n > 0:
     try:
         print("Камней в кучке ", n)
         print("Выберите кол-во камней от 1 до 3")
-        take = 0
+        playerTurn = 0
         try:
-            take = int(input())
+            playerTurn = int(input())
         except ValueError:
             print("Вы ввели не целое число")
             exit()
-        if take < 0 or take > 3:
+        if playerTurn < 0 or playerTurn > 3:
             print("Введено неверное кол-во камней")
             exit()
-        while n - take < 1:
+        while n - playerTurn < 1:
             print("Кол-во камней в куче не может быть отрицательным")
-            take = int(input())
+            playerTurn = int(input())
             continue
-        n -= take
+        n -= playerTurn
 
         if n == 1:
             print("Вы выйграли!")
             break
 
-        compTurn = 0
-        compTurn = rr(1, 4)
+        compTurn = randrange(1, 4)
         while n - compTurn < 1:
-            compTurn = rr(1, 4)
+            compTurn = randrange(1, 4)
         n -= compTurn
         print("Компьютер взял", compTurn, "камней")
 
