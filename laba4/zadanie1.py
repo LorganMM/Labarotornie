@@ -35,3 +35,4 @@ while n > 0:
             break
     except ValueError:
         print("Введите число от 1 до 3")
+#afafawfawfaw
